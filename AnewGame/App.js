@@ -8,20 +8,18 @@ window.onload = function() {
 }
 
 function setGame() {
-    //set up the grid in html
-    for (let i = 0; i < 9; i++) { //i goes from 0 to 8, stops at 9
-        //<div id="0-8"></div>
+    for (let i = 0; i < 9; i++) { 
+        
         let tile = document.createElement("div");
         tile.id = i.toString();
         tile.addEventListener("click", selectTile);
         document.getElementById("board").appendChild(tile);
     }
-    setInterval(setMole, 2000); // 2000 miliseconds = 2second, every 2 second call setMole
-    setInterval(setPlant, 3000); // 3000 miliseconds = 3 seconds, every 3 second call setPlant
+    setInterval(setMole, 2000); 
+    setInterval(setPlant, 3000); 
 }
 
 function getRandomTile() {
-    //math.random --> 0-1 --> (0-1) * 9 = (0-9) --> round down to (0-8) integers
     let num = Math.floor(Math.random() * 9);
     return num.toString();
 }
